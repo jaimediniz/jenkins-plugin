@@ -1,26 +1,27 @@
 services:
   dev-environment:
-    image: mcr.microsoft.com/devcontainers/java:1-21-bullseye
+    build:
+      context: devcontainer
+      dockerfile: Dockerfile
     command: /bin/sh -c "while sleep 1000; do :; done"
     network_mode: "host"
     environment:
       HISTFILE: /workspace/.devcontainer/.bash_history
     volumes:
       - ..:/workspace
-      - ./maven/settings.xml:~/.m2/settings.xml
 
-  jenkins:
-    build:
-      context: jenkins
-      dockerfile: Dockerfile
-    environment:
-      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Dcasc.jenkins.config=/var/jenkins_home/casc_configs"
-      JENKINS_ADMIN_ID: admin
-      JENKINS_ADMIN_PASSWORD: password
-    network_mode: "host"
-    ports:
-      - 8080:8080
-    volumes:
-      - ..:/workspace
-      - ./jenkins/casc_configs/:/var/jenkins_home/casc_configs/
-      - ./jenkins/init.groovy.d/:/var/jenkins_home/init.groovy.d/
+  # jenkins:
+  #   build:
+  #     context: jenkins
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Dcasc.jenkins.config=/var/jenkins_home/casc_configs"
+  #     JENKINS_ADMIN_ID: admin
+  #     JENKINS_ADMIN_PASSWORD: password
+  #   network_mode: "host"
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - ..:/workspace
+  #     - ./jenkins/casc_configs/:/var/jenkins_home/casc_configs/
+  #     - ./jenkins/init.groovy.d/:/var/jenkins_home/init.groovy.d/
