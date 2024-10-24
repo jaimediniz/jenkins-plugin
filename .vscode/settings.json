@@ -13,5 +13,6 @@
         "timestamper",
         "Vuillamy"
     ],
-    "git.autofetch": true
+    "git.autofetch": true,
+    "git.confirmSync": false
 }
