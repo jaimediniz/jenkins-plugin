@@ -11,7 +11,8 @@
         "oderwat",
         "Signup",
         "timestamper",
-        "Vuillamy"
+        "Vuillamy",
+        "autofetch",
     ],
     "git.autofetch": true,
     "git.confirmSync": false,
