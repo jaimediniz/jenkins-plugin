@@ -7,6 +7,7 @@ services:
       HISTFILE: /workspace/.devcontainer/.bash_history
     volumes:
       - ..:/workspace
+      - ./maven/settings.xml:~/.m2/settings.xml
 
   jenkins:
     build:

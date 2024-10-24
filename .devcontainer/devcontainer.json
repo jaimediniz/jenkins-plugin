@@ -23,7 +23,8 @@
 				"oderwat.indent-rainbow",
 				"humao.rest-client",
 				"redhat.vscode-yaml",
-				"NicolasVuillamy.vscode-groovy-lint"
+				"NicolasVuillamy.vscode-groovy-lint",
+				"redhat.vscode-xml"
 			]
 		}
 	},
