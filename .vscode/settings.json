@@ -12,5 +12,6 @@
         "Signup",
         "timestamper",
         "Vuillamy"
-    ]
+    ],
+    "git.autofetch": true
 }
