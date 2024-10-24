@@ -1,0 +1,20 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+  numExecutors: 0
+  authorizationStrategy:
+    globalMatrix:
+      entries:
+      - group:
+          name: "authenticated"
+          permissions:
+          - "Overall/Read"
+      - user:
+          name: "${JENKINS_ADMIN_ID}"
+          permissions:
+          - "Overall/Administer"

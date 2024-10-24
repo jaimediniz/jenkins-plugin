@@ -22,7 +22,8 @@
 				"mhutchie.git-graph",
 				"oderwat.indent-rainbow",
 				"humao.rest-client",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"NicolasVuillamy.vscode-groovy-lint"
 			]
 		}
 	},
