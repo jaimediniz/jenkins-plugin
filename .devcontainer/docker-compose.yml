@@ -1,0 +1,13 @@
+services:
+  dev-environment:
+    image: mcr.microsoft.com/devcontainers/java:1-21-bullseye
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      HISTFILE: /workspace/.devcontainer/.bash_history
+    volumes:
+      - ..:/workspace
+
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    ports:
+      - "8080:8080"

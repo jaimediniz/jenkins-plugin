@@ -1,0 +1,35 @@
+{
+	"name": "Jenkins Plugin Development Environment",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "dev-environment",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "true",
+			"installGradle": "false"
+		},
+		"ghcr.io/devcontainers/features/python:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"Codeium.codeium",
+				"streetsidesoftware.code-spell-checker",
+				"aaron-bond.better-comments",
+				"alefragnani.Bookmarks",
+				"PKief.material-icon-theme",
+				"mhutchie.git-graph",
+				"oderwat.indent-rainbow",
+				"humao.rest-client",
+				"redhat.vscode-yaml"
+			]
+		}
+	},
+	"forwardPorts": [
+		8080
+	],
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"remoteUser": "vscode"
+}
